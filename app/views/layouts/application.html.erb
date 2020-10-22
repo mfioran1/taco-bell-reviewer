@@ -7,9 +7,28 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <style>
+      body {
+       background-color: #E8E8E8;
+      }
+    </style>
   </head>
 
   <body>
+
+      <div>
+      <% if logged_in? %>
+      <%= link_to "Rate a menu item!", new_rating_path %> -
+      <%= link_to "See all ratings!", ratings_path %> -
+      <%= link_to "Logout", logout_path, method:"delete" %>
+      <% else %>
+      <%= link_to "Create an account", new_user_path %> - 
+      <%= link_to "Log in here", login_path %>
+      <% end %>
+      </div>
+
     <%= yield %>
   </body>
 </html>

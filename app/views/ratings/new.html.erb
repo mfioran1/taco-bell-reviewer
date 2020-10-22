@@ -1,0 +1,11 @@
+<h1> New Rating! </h1>
+
+<%= form_for(@rating) do |f| %>
+    <%= f.label :taste %>
+    <%= f.text_area :taste %>
+
+    <%= f.label :comments %>
+    <%= f.text_area :comments %>
+
+    <%= f.submit %>
+<% end %>
