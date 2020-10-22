@@ -1,0 +1,13 @@
+<h1>Create a new taco to review!</h1>
+
+<%= form_for(@taco) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <br>
+    <%= f.label :category %>
+    <%= f.collection_select :category_id , Category.all, :id, :name %>
+    <br>
+    <br>
+    <%= f.submit %>
+<% end %>

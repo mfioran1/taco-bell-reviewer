@@ -13,6 +13,11 @@ class RatingsController < ApplicationController
         end
     end
 
+    def index
+        @ratings = Rating.all 
+    end
+    
+
 
  private
         def rating_params
