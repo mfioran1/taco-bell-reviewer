@@ -5,9 +5,9 @@ class TacosController < ApplicationController
     end
 
     def create
-        # @taco = current_user.ratings.build(taco_params)
+        # @taco = current_user.tacos.build(taco_params)
         # if @taco.save
-        #     redirect_to tacos_path
+        #     redirect_to taco_path
         # else
         #     render :new
         # end
@@ -18,10 +18,14 @@ class TacosController < ApplicationController
         @tacos = Taco.all 
     end
 
+    def show
+        @taco = Taco.find_by_id(params[:id])
+    end
+
 
     private
 
     def taco_params
-        params.require(:taco).permit(:name)
+        params.require(:taco).permit(:name, :category_id)
     end
 end

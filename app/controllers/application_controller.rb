@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
-    before_action :current_user
-    before_action :redirect_if_not_logged_in
+    # before_action :current_user
+    # before_action :redirect_if_not_logged_in
     
     helper_method :current_user, :logged_in?
 
